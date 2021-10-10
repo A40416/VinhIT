@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.json": "cpp",
+        "new": "cpp",
+        "iosfwd": "cpp",
+        "bitset": "cpp",
+        "iostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

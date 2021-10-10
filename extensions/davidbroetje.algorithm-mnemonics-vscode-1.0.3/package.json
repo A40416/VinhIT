@@ -1,0 +1,43 @@
+{
+	"name": "algorithm-mnemonics-vscode",
+	"displayName": "C++ Algorithm Mnemonics",
+	"description": "C++ Algorithm Mnemonics as VSCode snippets.",
+	"version": "1.0.3",
+	"publisher": "davidbroetje",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/davidbroetje/algorithm-mnemonics-vscode"
+	},
+	"bugs": {
+		"url": "https://github.com/davidbroetje/algorithm-mnemonics-vscode/issues"
+	},
+	"icon": "images/AMN-icon.png",
+	"engines": {
+		"vscode": "^1.4.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "cpp",
+				"path": "./snippets/cpp.json"
+			}
+		]
+	},
+	"keywords": [
+		"c++",
+		"cpp",
+		"snippet",
+		"std",
+		"stl"
+	],
+	"__metadata": {
+		"id": "d630e7e6-fd4f-4a1e-9a3f-f76631888b76",
+		"publisherId": "cd29b7ef-345b-4c95-97aa-fbb054f785d3",
+		"publisherDisplayName": "David Brötje",
+		"installedTimestamp": 1619374345527
+	}
+}

@@ -1,0 +1,165 @@
+{
+	"publisher": "ronnysherer",
+	"author": {
+		"name": "Ronny Sherer"
+	},
+	"homepage": "https://github.com/ronshe/cpp-assist/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ronshe/cpp-assist"
+	},
+	"bugs": {
+		"url": "https://github.com/ronshe/cpp-assist/issues"
+	},
+	"name": "cpp-assist",
+	"icon": "images/icon.png",
+	"displayName": "C++ Assistant",
+	"description": "Convenient operations on C++ projects",
+	"license": "See license in LICENSE.txt",
+	"version": "0.1.4",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.includeFile",
+		"onCommand:extension.includeGuard",
+		"onCommand:extension.createClass"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.includeFile",
+				"title": "c++ assist: include file"
+			},
+			{
+				"command": "extension.includeGuard",
+				"title": "c++ assist: include guard"
+			},
+			{
+				"command": "extension.createClass",
+				"title": "c++ assist: create class"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "explorerResourceIsFolder",
+					"command": "extension.createClass"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "extension.includeFile",
+				"title": "c++ assist: include file",
+				"key": "ctrl+alt+i",
+				"mac": "cmd+alt+i",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "extension.includeGuard",
+				"title": "c++ assist: include guard",
+				"key": "ctrl+alt+g",
+				"mac": "cmd+alt+g",
+				"when": "editorTextFocus"
+			}
+		],
+		"configuration": [
+			{
+				"title": "C++ assist",
+				"properties": {
+					"cpp_assist.includeFile.removePathUntil": {
+						"type": "string",
+						"default": "",
+						"description": "Ignore this path prefix from `include` path. If empty, it will ignore the path of current workspace"
+					},
+					"cpp_assist.includeFile.isRelative": {
+						"type": "boolean",
+						"default": true,
+						"description": "Is include path relative to current position or absolute from current workspace root."
+					},
+					"cpp_assist.includeGuard.random": {
+						"type": "boolean",
+						"default": true,
+						"description": "Should we add a random string to file name string in the include guard?"
+					},
+					"cpp_assist.includeGuard.prefix": {
+						"type": "string",
+						"default": "__",
+						"description": "Prefix for include guard."
+					},
+					"cpp_assist.includeGuard.suffix": {
+						"type": "string",
+						"default": "__",
+						"description": "Suffix for include guard."
+					},
+					"cpp_assist.includeGuard.commentStyle": {
+						"type": "string",
+						"enum": [
+							"block comment",
+							"line comment",
+							"None"
+						],
+						"default": "line comment",
+						"description": "Style of comment in include guard end."
+					},
+					"cpp_assist.includeGuard.spacesBeforeComment": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 40,
+						"default": 2,
+						"description": "How many spaces between the '#endif' and the comment."
+					},
+					"cpp_assist.createClass.cppExtension": {
+						"type": "string",
+						"default": "cpp",
+						"description": "Extension of C++ implementation file (cpp/c++/cc)."
+					},
+					"cpp_assist.createClass.hppExtension": {
+						"type": "string",
+						"default": "h",
+						"description": "Extension of C++ header file (h/hpp/h++/hh)."
+					},
+					"cpp_assist.createClass.cppTemplate": {
+						"type": "string",
+						"default": "",
+						"description": "Path of template of C++ implementation file."
+					},
+					"cpp_assist.createClass.hppTemplate": {
+						"type": "string",
+						"default": "",
+						"description": "Path of template of C++ header file."
+					},
+					"cpp_assist.createClass.useIncludeGuard": {
+						"type": "boolean",
+						"default": true,
+						"description": "Add include guard to the header file when creating a class."
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"test": "node ./test/runTest.js",
+		"create": "node node_modules/vsce/out/vsce package -o ./cpp-assist.vsix",
+		"install": "npm run create && code --install-extension ./cpp-assist.vsix && node node_modules/del-cli/cli.js ./cpp-assist.vsix"
+	},
+	"devDependencies": {
+		"eslint": "^7.7.0",
+		"vscode-test": "^1.4.0"
+	},
+	"dependencies": {
+		"del-cli": "^3.0.1",
+		"vsce": "^1.81.1"
+	},
+	"__metadata": {
+		"id": "d56f5ade-ea81-4ef9-8e21-29f0a7ce1af4",
+		"publisherId": "05d13cbf-79c3-4511-8958-de92367f6c56",
+		"publisherDisplayName": "Ronny Sherer",
+		"installedTimestamp": 1619374378481
+	}
+}

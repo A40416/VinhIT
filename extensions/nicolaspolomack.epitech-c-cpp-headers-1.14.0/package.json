@@ -1,0 +1,124 @@
+{
+	"name": "epitech-c-cpp-headers",
+	"displayName": "EPITECH C/C++ Headers",
+	"description": "An EPITECH header handler for C/C++ projects",
+	"version": "1.14.0",
+	"publisher": "nicolaspolomack",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Hirevo/epitech-c-cpp-headers"
+	},
+	"galleryBanner": {
+		"color": "#202731",
+		"theme": "dark"
+	},
+	"icon": "resources/logo.png",
+	"readme": "./README.md",
+	"author": {
+		"name": "Nicolas Polomack",
+		"email": "nipolom@live.fr"
+	},
+	"engines": {
+		"vscode": "^1.18.1"
+	},
+	"categories": [
+		"Snippets",
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "epitech-c-cpp-headers.addHeader",
+				"title": "EPITECH C/C++ Headers: Add EPITECH Header"
+			},
+			{
+				"command": "epitech-c-cpp-headers.setConfig",
+				"title": "EPITECH C/C++ Headers: Configure headers"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "epitech-c-cpp-headers.addHeader",
+				"key": "ctrl+shift+h",
+				"mac": "cmd+shift+h",
+				"when": "editorTextFocus"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "EPITECH C/C++ Headers Configuration",
+			"properties": {
+				"epitech-c-cpp-headers.username": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Specifies the username to use for the header."
+				},
+				"epitech-c-cpp-headers.login": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Specifies the login to use for the header."
+				},
+				"epitech-c-cpp-headers.prompt": {
+					"type": "boolean",
+					"default": true,
+					"description": "Specifies if the extension prompts for unknown settings."
+				},
+				"epitech-c-cpp-headers.headerType": {
+					"type": "string",
+					"default": "post2017",
+					"enum": [
+						"post2017",
+						"pre2017"
+					],
+					"description": "Specifies the type of header to use."
+				},
+				"epitech-c-cpp-headers.usePragmaOnce": {
+					"type": "boolean",
+					"default": false,
+					"description": "Specifies if '#pragma once' should be used as header guard instead of '#ifndef ...'."
+				},
+				"epitech-c-cpp-headers.autoGenerateClasses": {
+					"type": "boolean",
+					"default": true,
+					"description": "Specifies if automatic C++ class generation is enabled."
+				},
+				"epitech-c-cpp-headers.indentAccessSpecifiers": {
+					"type": "boolean",
+					"default": true,
+					"description": "Specifies if access specifiers indentation is enabled."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"compile": "tsc -p ./",
+		"compile-watch": "tsc --watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/node": "^13.5.0",
+		"typescript": "^3.7.5",
+		"vscode": "^1.1.36"
+	},
+	"dependencies": {
+		"escape-string-regexp": "^2.0.0"
+	},
+	"__metadata": {
+		"id": "963437ec-71b8-43bb-9839-32971656ca78",
+		"publisherId": "9ea2fcc5-e2c5-4fe1-9dad-042209d580a7",
+		"publisherDisplayName": "Nicolas Polomack",
+		"installedTimestamp": 1619374349552
+	}
+}

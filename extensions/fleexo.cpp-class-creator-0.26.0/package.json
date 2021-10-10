@@ -1,0 +1,113 @@
+{
+	"name": "cpp-class-creator",
+	"displayName": "C++ Class Creator",
+	"description": "A very simple class creation extension for Visual Studio Code from FleeXo",
+	"publisher": "FleeXo",
+	"icon": "icon/logo.png",
+	"repository": {
+		"url": "https://github.com/tzAcee/cpp-class-creator.git"
+	},
+	"version": "0.26.0",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.createClass"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"title": "Create C++ Class",
+				"command": "extension.createClass"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"group": "navigation@-1",
+					"command": "extension.createClass"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "extension.createClass",
+				"key": "alt+x",
+				"when": "editorTextFocus"
+			}
+		],
+		"languages": [
+			{
+				"id": "cpp",
+				"extensions": [
+					".cpp",
+					".hpp"
+				]
+			}
+		],
+		"configuration": [
+			{
+				"title": "C++ Class Creator",
+				"properties": {
+					"cpp.creator.setPath": {
+						"type": [
+							"string",
+							"null",
+							"boolean"
+						],
+						"default": null,
+						"description": "Specifies the path, where the class is created or set it to true when you want the path to be dynamically inputted. [setting: cpp.creator.setPath = \"path\" or true]"
+					},
+					"cpp.creator.createFolder": {
+						"type": "boolean",
+						"default": false,
+						"description": "Create an extra folder for the class."
+					},
+					"cpp.creator.useHPPEnding": {
+						"type": "boolean",
+						"default": true,
+						"description": "Use the C++ header naming (.hpp), if set to false the extension will create .h files"
+					},
+					"cpp.creator.headerProtection.usePragmaOnce": {
+						"type": "boolean",
+						"default": true,
+						"description": "Adds the *#pragma once* to the .hpp buffer."
+					},
+					"cpp.creator.headerProtection.useIfnDef": {
+						"type": "boolean",
+						"default": true,
+						"description": "Adds *#ifndef* to the .hpp buffer."
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.12.22",
+		"@types/vscode": "^1.41.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4",
+		"vscode-test": "^1.2.2"
+	},
+	"__metadata": {
+		"id": "82061314-3d2d-4d78-aeee-57cb099c76e3",
+		"publisherId": "fa241db9-22ca-480c-90a7-8c0e891311b2",
+		"publisherDisplayName": "FleeXo",
+		"installedTimestamp": 1626685117067
+	}
+}

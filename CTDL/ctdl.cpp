@@ -33,7 +33,7 @@ class list{
 //     for (int i=1;i< index; i++)
 //         t=t->next;
 //     return t;
-// }
+// } 
 template<class T>
 list<T>::list(){
     size=0;

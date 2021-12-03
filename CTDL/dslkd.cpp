@@ -29,7 +29,7 @@ class list{
     void print_list();
     friend ostream& operator<<(ostream& out, list<T> h)
     {
-        Node *p=h.head;
+        node *p=h.head;
         while (p!=NULL)
         {
             out<<p->item<<" ";

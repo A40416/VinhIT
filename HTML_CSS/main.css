@@ -1,0 +1,27 @@
+/* hàm ảo gọi đến element */
+/* :root{
+    --text-color: yellow;
+} 
+
+h1{
+    color: var(--text-color);
+} */
+
+
+/* thưc hiện khi trỏ chuột tới */
+/* h1:hover{
+    color: red;
+} */
+
+/* thuc hien khi ấn chuột vào */
+/* h1:active{
+    color: red;
+} */
+
+/* con */
+h1:first-child{
+    color: red;
+}
+h1:last-child{
+    color: red;
+}

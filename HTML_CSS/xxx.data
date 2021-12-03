@@ -1,0 +1,24 @@
+ <ul>
+            <li>Thag lol hoang </li>
+            <li>Van la thg lol hoang</li>
+        </ul>
+        
+        <table>
+            <thead>
+                <th>STT</th>
+                <th>Ten</th>
+                <th>sdt</th>
+                <th>Dc</th>
+            </thead>
+            <tbody>
+               <tr>
+                   <td>1</td>
+                   <td>hoang</td>
+                   <td>021315312</td>
+                   <td>haloi</td>
+               </tr> 
+            </tbody>
+        </table>
+
+
+        /////////////////////////////
